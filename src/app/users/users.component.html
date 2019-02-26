@@ -1,0 +1,49 @@
+<section class="content-header">
+  <h1>
+    Clients
+  </h1>
+</section>
+
+<section class="content">
+  <div class="form">
+    <form [formGroup]="clientForm" (ngSubmit)="onSubmit()">
+      <label>
+        Name:
+        <input type="text" formControlName="name">
+      </label>
+      <label>
+        Price:
+        <input type="text" formControlName="price">
+      </label>
+      <label>
+        Quantity:
+        <input type="text" formControlName="quantity">
+      </label>
+      <label>
+        Model:
+        <input type="text" formControlName="model">
+      </label>
+      <label>
+        Brand:
+        <input type="text" formControlName="brand">
+      </label>
+      <!-- <label>
+        Name:
+        <input type="text" formControlName="name">
+      </label>
+      <label>
+        Name:
+        <input type="text" formControlName="name">
+      </label>
+      <label>
+        Name:
+        <input type="text" formControlName="name">
+      </label> -->
+      
+  <button type="submit" [disabled]="!clientForm.valid">Submit</button>
+</form>
+</div>
+
+</section>
+
+
