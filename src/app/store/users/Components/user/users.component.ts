@@ -4,8 +4,8 @@ import {FormBuilder, FormControl, FormGroup} from '@angular/forms'
 
 import { Observable } from "rxjs";
 
-import { User } from '../../../models/user';
-import { UsersService } from "../../../services/users.service";
+import { User } from '../../Models/user';
+import { UsersService } from "../../Services/users.service";
 
 @Component({
   selector: 'st-users',
