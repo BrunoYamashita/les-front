@@ -7,13 +7,17 @@ import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { CommonComponent } from './common/common.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { GuardComponent } from './guard/guard.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http'
 
 @NgModule({
-  declarations: [LoginComponent, HeaderComponent, HomeComponent, CommonComponent, DashboardComponent, GuardComponent],
+  declarations: [LoginComponent, HeaderComponent, HomeComponent, CommonComponent, DashboardComponent],
   imports: [
     CommonModule,
-    AdminRoutingModule
+    AdminRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ]
 })
 export class AdminModule { }

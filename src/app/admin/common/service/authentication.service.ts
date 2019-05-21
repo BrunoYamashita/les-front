@@ -1,5 +1,11 @@
+import { Injectable } from '@angular/core';
+
+@Injectable({ providedIn: 'root' })
 export class AuthenticationService {
-  constructor() { }
+
+constructor() { 
+}
+  private _user: any
 
   public get token() : string {
     return this.token
@@ -10,17 +16,16 @@ export class AuthenticationService {
   }
   
   //Create user interface
-  public get user() : any {
-    return this.user
+  get user(): any {
+    return this._user
   }
-
   
-  public set user(v : any) {
-    this.user = v;
+  set user(v: any) {
+    this._user = v;
   }
 
-  public validateAuth(token, user) {
-
+  public validateAuth(token?, user?) {
+    return false;
   }
 
   public logOff() {
