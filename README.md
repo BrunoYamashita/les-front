@@ -25,3 +25,25 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## Project Structure
+
+To a better organization please follow the following structure below:
+
+```
+| Module
+    |- Feature
+        |- Components
+            |- x.componente.html
+            |- x.componente.less
+            |- x.componente.spec.ts
+            |- x.componente.ts
+        |- Directives
+        |- Enums
+        |- Interfces
+        |- Models
+        |- Pipes
+        |- Services
+    |- Routing
+
+```

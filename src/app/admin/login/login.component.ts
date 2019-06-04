@@ -13,8 +13,9 @@ export class LoginComponent implements OnInit {
   constructor(private formBuilder: FormBuilder,
               private loginService: LoginService,
               private authService: AuthenticationService) { }
-  private login: FormGroup;
+  public login: FormGroup;
   ngOnInit() {
+    this.createForm();
   }
 
   createForm() {
@@ -27,7 +28,7 @@ export class LoginComponent implements OnInit {
   submit() {
     this.loginService.getAuthentication(this.login).subscribe((res) =>{
       this.authService.token = res.data;
-      this.authService.user = this.login; 
+      this.authService.user = this.login;
     });
   }
 }
