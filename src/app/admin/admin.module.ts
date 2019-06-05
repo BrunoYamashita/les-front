@@ -8,6 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { CommonComponent } from './common/common.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ProductModule } from './product/product.module';
 
 @NgModule({
   declarations: [LoginComponent, HeaderComponent, HomeComponent, CommonComponent],
@@ -16,7 +17,8 @@ import { HttpClientModule } from '@angular/common/http';
     AdminRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ProductModule
   ]
 })
 export class AdminModule { }

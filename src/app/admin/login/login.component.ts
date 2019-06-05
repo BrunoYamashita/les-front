@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
 
   submit() {
     this.loginService.getAuthentication(this.login).subscribe((res) =>{
-      this.authService.token = res.data;
+      this.authService.token = 'aaaa';
       this.authService.user = this.login;
     });
   }

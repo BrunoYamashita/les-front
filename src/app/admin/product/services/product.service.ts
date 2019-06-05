@@ -3,13 +3,12 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 @Injectable({providedIn: 'root'})
-export class LoginService {
+export class ProductService {
     constructor(private http: HttpClient) {
     }
 
-    getAuthentication(user?: any) {
+    public getProducts() {
         // this.http
-        console.log(user);
-        return new Observable;
+        return new Observable();
     }
 }
