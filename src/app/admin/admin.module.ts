@@ -9,16 +9,23 @@ import { CommonComponent } from './common/common.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductModule } from './product/product.module';
+import { UserModule } from './user/user.module';
 
 @NgModule({
-  declarations: [LoginComponent, HeaderComponent, HomeComponent, CommonComponent],
+  declarations: [
+    LoginComponent,
+    HeaderComponent,
+    HomeComponent,
+    CommonComponent,
+  ],
   imports: [
     CommonModule,
     AdminRoutingModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    ProductModule
+    ProductModule,
+    UserModule
   ]
 })
 export class AdminModule { }

@@ -6,13 +6,14 @@ export class AuthenticationService {
 constructor() { 
 }
   private _user: any
+  private _token: any
 
   public get token() : string {
-    return this.token
+    return this._token
   }
   
   public set token(v : string) {
-    this.token = v;
+    this._token = v;
   }
   
   //Create user interface
@@ -24,11 +25,11 @@ constructor() {
     this._user = v;
   }
 
-  public validateAuth(token?, user?) {
-    return false;
+  public validateAuth() {
+    return this._token && this._user;
   }
 
   public logOff() {
-    this.token = this.user = null;
+    this._token = this._user = null;
   }
 }

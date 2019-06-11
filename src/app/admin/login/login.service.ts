@@ -8,8 +8,6 @@ export class LoginService {
     }
 
     getAuthentication(user?: any) {
-        // this.http
-        console.log(user);
-        return new Observable;
+        return this.http.post('http://localhost:8000/api/login', user);
     }
 }

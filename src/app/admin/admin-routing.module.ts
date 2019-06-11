@@ -4,21 +4,31 @@ import { AuthGuard } from './guard/guard.service';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { ProductListComponent } from './product/components/product-list/product-list.component';
+import { UsersListComponent } from './user/components/users-list/users-list.component';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'home',
     component: HomeComponent,
-    canActivate: [AuthGuard]
+    canActivate: [AuthGuard],
+    children: [
+      {
+        path: '',
+        canActivateChild: [AuthGuard],
+        children: [
+          { path: 'product', component: ProductListComponent },
+          { path: 'users', component: UsersListComponent }
+        ]
+      }
+    ]
   },
   {
     path: 'login',
     component: LoginComponent,
   },
-  {
-    path: 'product',
-    component: ProductListComponent,
-  }
+  { path: '**',  redirectTo: '/admin/home'},
+  { path: '',  redirectTo: '/admin/home'},
+
 ];
 
 @NgModule({

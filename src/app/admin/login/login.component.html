@@ -1,7 +1,7 @@
 <div>
-    <form [formGroup]="login">
-        <label for="username">Username</label>
-        <input type="text" formControlName="username">
+    <form [formGroup]="signin">
+        <label for="login">Username</label>
+        <input type="text" value="teste" formControlName="login">
         <label for="password">Password</label>
         <input type="password" formControlName="password">
         <button (click)="submit()">Sign In</button>
