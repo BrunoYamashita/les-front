@@ -1,6 +1,8 @@
 <div>
-  aaaa
-      <div *ngFor="let product of products">
+    <a [routerLink]="['form']">
+        New
+      </a>
+  <div *ngFor="let product of products">
     <app-product [product]="product"></app-product>
   </div>
 </div>

@@ -28,9 +28,8 @@ export class LoginComponent implements OnInit {
   }
 
   submit() {
-    this.loginService.getAuthentication(this.signin.value).subscribe((res) =>{
-      this.authService.token = res.token;
-      this.authService.user = this.signin.value;
+    this.loginService.getAuthentication(this.signin.value).subscribe((res: any) =>{
+      this.authService.setsession(res.token,this.signin.value);
       this.router.navigate(['admin/'], {replaceUrl: true});
     }, (error) => {
       console.log(error);

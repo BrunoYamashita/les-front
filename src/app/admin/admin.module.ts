@@ -10,6 +10,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductModule } from './product/product.module';
 import { UserModule } from './user/user.module';
+import { ProviderModule } from './provider/provider.module';
+import { CategoryModule } from './category/category.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -25,7 +28,10 @@ import { UserModule } from './user/user.module';
     ReactiveFormsModule,
     HttpClientModule,
     ProductModule,
-    UserModule
+    UserModule,
+    ProviderModule,
+    CategoryModule,
+    RouterModule
   ]
 })
 export class AdminModule { }

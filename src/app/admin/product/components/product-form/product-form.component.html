@@ -1,5 +1,29 @@
-<form action="">
-
-  <label for=""></label>
-  <input type="text">
-</form>
+<div>
+    <form [formGroup]="productForm">
+        <label for="produto_nome">Name</label>
+        <input type="text" formControlName="produto_nome">
+        <label for="produto_descricao">Description</label>
+        <input type="text" formControlName="produto_descricao" maxlength="100">
+        <label for="produto_estoque">Quantity</label>
+        <input type="number" formControlName="produto_estoque" >
+        <label for="produto_valor">Price</label>
+        <input type="number" formControlName="produto_valor" >
+        <label for="produto_valor_promocao">Promotional Price</label>
+        <input type="number" formControlName="produto_valor_promocao" >
+        <label for="produto_status">Status</label>
+        <input type="text" formControlName="produto_status" >
+        <label for="marca_id">Provider</label>
+        <select formControlName="marca_id">
+          <option *ngFor="let provider of providerdrop" [ngValue]="provider.marca_id">
+            {{provider.marca_nome}}
+          </option>
+        </select>
+        <label for="categoria_id">Provider</label>
+        <select formControlName="categoria_id">
+            <option *ngFor="let category of categorydrop" [ngValue]="category.categoria_id">
+              {{category.categoria_nome}}
+            </option>
+          </select>
+        <button (click)="submit()">Save</button>
+    </form>
+</div>

@@ -4,24 +4,23 @@ import { Observable } from 'rxjs';
 import { AuthenticationService } from '../../common/service/authentication.service';
 
 @Injectable({providedIn: 'root'})
-export class ProductService {
-    private productRoute = 'http://localhost:8000/api/produto';
+export class UserService {
+    private userRoute = 'http://localhost:8000/api/user';
     constructor(private http: HttpClient,private authenticationService: AuthenticationService) {
     }
 
-    public getProducts() {
+    public getUsers() {
         let headers = new HttpHeaders({
             'token_hash': this.authenticationService.token
         });
         
-        return this.http.get(this.productRoute, {headers});
+        return this.http.get(this.userRoute, {headers});
     }
 
-    public  createProducts(product: any) {
+    public createUser(user: any){
         let headers = new HttpHeaders({
-            'token_hash': this.authenticationService.token
+            'token_hash': this.authenticationService.token,
         });
-        
-        return this.http.post(this.productRoute, product, {headers});
+        return this.http.post(this.userRoute, user,{headers});
     }
 }

@@ -9,7 +9,7 @@ constructor() {
   private _token: any
 
   public get token() : string {
-    return this._token
+    return localStorage.getItem('token')
   }
   
   public set token(v : string) {
@@ -26,10 +26,19 @@ constructor() {
   }
 
   public validateAuth() {
-    return this._token && this._user;
+    return localStorage.getItem('token');
   }
 
   public logOff() {
     this._token = this._user = null;
+    localStorage.clear();
   }
+
+  public setsession(token: any, user){
+    this._token = token;
+    this._user = user;
+    localStorage.setItem('token', token);
+    localStorage.setItem('user', user);
+  }
+
 }

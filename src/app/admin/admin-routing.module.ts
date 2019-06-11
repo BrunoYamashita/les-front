@@ -5,6 +5,12 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { ProductListComponent } from './product/components/product-list/product-list.component';
 import { UsersListComponent } from './user/components/users-list/users-list.component';
+import { ProviderListComponent } from './provider/components/provider-list/provider-list.component';
+import { ProviderFormComponent } from './provider/components/provider-form/provider-form.component';
+import { CategoryListComponent } from './category/components/category-list/category-list.component';
+import { ProductFormComponent } from './product/components/product-form/product-form.component';
+import { CategoryFormComponent } from './category/components/category-form/category-form.component';
+import { UserFormComponent } from './user/user-form/user-form.component';
 
 const routes: Routes = [
   {
@@ -16,8 +22,14 @@ const routes: Routes = [
         path: '',
         canActivateChild: [AuthGuard],
         children: [
+          { path: 'provider/form', component: ProviderFormComponent },
+          { path: 'product/form', component: ProductFormComponent },
+          { path: 'category/form', component: CategoryFormComponent },
+          { path: 'user/form', component: UserFormComponent },
           { path: 'product', component: ProductListComponent },
-          { path: 'users', component: UsersListComponent }
+          { path: 'provider', component: ProviderListComponent },
+          { path: 'category', component: CategoryListComponent },
+          { path: 'user', component: UsersListComponent }
         ]
       }
     ]
