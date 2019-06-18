@@ -15,9 +15,6 @@
         <li class="nav-item">
           <a class="nav-link" routerLink="provider" routerLinkActive="active">Brands</a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" routerLink="category" routerLinkActive="active">Category</a>
-        </li>
         <!-- <li class="nav-item">
           <a class="nav-link" href="#">Link</a>
         </li> -->
@@ -36,6 +33,7 @@
           <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
         </li> -->
       </ul>
-      <button class="btn btn-light my-2 my-sm-0" (click)="logoff()">Log Off</button>
+      <button *ngIf="false" class="btn btn-light my-2 my-sm-0" (click)="logoff()">Log Off</button>
+      <!-- <button *ngIf="true" class="btn btn-light my-2 my-sm-0" (click)="signIn()">Sign In</button> -->
     </div>
   </nav>

@@ -2,10 +2,10 @@
     background: #333;
     color: #fff;
     border-bottom: 1px solid #ececec;
+}
 
-    a {
-        color: #fff;
-    }
+.navbar-static-top a {
+    color: #fff;
 }
 
 .active{
