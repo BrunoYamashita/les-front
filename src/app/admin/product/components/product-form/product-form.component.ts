@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ProviderService } from 'src/app/admin/provider/service/provider.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { forkJoin } from 'rxjs';
 import { CategoryService } from 'src/app/admin/category/services/category.service';
 import { ProductService } from '../../services/product.service';
@@ -15,15 +15,25 @@ export class ProductFormComponent implements OnInit {
   private productForm: FormGroup;
   private categorydrop: any;
   private providerdrop: any;
+  private id: any;
   constructor(private formBuilder: FormBuilder, 
               private providerService: ProviderService, 
               private router: Router,
+              private route: ActivatedRoute,
               private categoryService: CategoryService,
               private productService: ProductService) { }
 
   ngOnInit() {
     this.createForm();
     this.getDropDown();
+    this.route.paramMap.subscribe((params: ParamMap) => {
+      this.id = params.get('id');
+      if(this.id) {
+        this.productService.getProductsById(this.id).subscribe((product) =>{
+          this.productForm.patchValue(product);
+        })
+      }
+    })
 
   }
 
@@ -37,11 +47,18 @@ export class ProductFormComponent implements OnInit {
       produto_valor_promocao: ['', Validators.required],
       categoria_id: ['', Validators.required],
       produto_status: ['', Validators.required],
-      
+      _method: [''],
     });
   }
 
   submit() {
+    if(this.id){
+      this.productForm.patchValue({'_method':'PUT'})
+      return this.productService.updateProduct(this.id, this.productForm.value).subscribe(() => {
+        this.router.navigate(['admin/home/product'], {replaceUrl: true});
+
+      })
+    }
     this.productService.createProducts(this.productForm.value).subscribe((success) => {
       console.log(success);
       this.router.navigate(['admin/home/product'], {replaceUrl: true});

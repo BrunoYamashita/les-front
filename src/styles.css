@@ -1,1 +1,168 @@
 /* You can add global styles to this file, and also import other style files */
+.new{
+    cursor: pointer;
+    display: block;
+    width: 55px;
+    height: 25px;
+    background: #4E9CAF;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold
+}
+
+.item {
+    padding: 5px
+}
+
+.place-info-box {
+  color: #555;
+  display: block;
+  min-height: 120px;
+  background: #fff;
+  width: 100%;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.3);
+  border-radius: 2px;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+.place-info-box small {
+  font-size: 14px;
+}
+.place-info-box .progress {
+  background: rgba(0, 0, 0, 0.2);
+  margin: 5px -10px 5px -10px;
+  height: 2px;
+}
+.place-info-box .progress,
+.place-info-box .progress .progress-bar {
+  border-radius: 0;
+}
+.place-info .progress .progress-bar {
+  background: #fff;
+}
+.place-info-box-icon {
+  border-top-left-radius: 2px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 2px;
+  display: block;
+  float: left;
+  width: 120px;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.2);
+}
+.place-info-box-icon > img {
+  max-width: 100%;
+}
+.place-info-box-content {
+  padding: 5px 10px;
+  margin-left: 95px;
+}
+.place-info-box-detail {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 5px;
+  width: 100%;
+  padding-left: 10px;
+
+}
+
+
+.place-info-box-text {
+  display: block;
+  font-size: 16px;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  width: 80%;
+  float: left;
+  padding-left: 10px;
+}
+
+.place-info-box-star {
+  display: block;
+  font-size: 16px;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 10px;
+  width: 20%;
+  float: right;
+}
+.place-info-box-more {
+  display: block;
+}
+.progress-description {
+  margin: 0;
+}
+
+.menu-item-info-box-icon {
+  border-top-left-radius: 2px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 2px;
+  display: block;
+  float: left;
+  height: 120px;
+  width: 76.55px;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.2);
+
+}
+
+.menu-item-info-box-icon img{
+    max-height: 120px;
+    max-width: 120px;
+}
+
+.content-list {
+  padding: 30px;
+}
+
+button i{
+  padding-left: 10px
+}
+
+.first {
+  margin-right: 25px;
+}
+
+.form-group{
+  display: flex;   
+  justify-content: space-between; 
+}
+
+.form-group button {
+  line-height: 1.3333333;
+  border-radius: 6px;
+  margin-right: 0px;
+  padding: 0px 13px 0px 8px;
+}
+
+.form-control{
+  width: 94%;
+}
+
+.margin{
+  margin-bottom: 10px;
+}
+
+form {
+max-width: 200px;
+}
+
+.content-list {
+  padding: 10px;
+}
+
+i.fa-trash{
+  float: right;
+  padding-right: 10px;
+  color: red;
+  cursor: pointer;
+}

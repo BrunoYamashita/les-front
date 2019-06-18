@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
+import { ProductService } from '../../../services/product.service';
 
 @Component({
   selector: 'app-product',
@@ -8,9 +10,17 @@ import { Component, OnInit, Input } from '@angular/core';
 export class ProductComponent implements OnInit {
 
   @Input() product: any;
-  constructor() { }
+  constructor(private router: Router, private productService: ProductService) { }
 
   ngOnInit() {
   }
+  edit(){
+    this.router.navigate(['admin/home/product', this.product.produto_id])
+  }
 
+  delete() {
+    this.productService.deleteProduct(this.product.produto_id).subscribe(() => {
+      this.router.navigate(['admin/home/product'])
+    })
+  }
 }

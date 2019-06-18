@@ -1,13 +1,17 @@
 <div>
     <form [formGroup]="userForm">
-        <label for="name">Name</label>
-        <input type="text" formControlName="name">
-        <label for="login">Login</label>
-        <input type="text" formControlName="login" >        
-        <label for="email">E-mail</label>
-        <input type="text" formControlName="email" >
-        <label for="senha">Password</label>
-        <input type="text" formControlName="senha" >
+        <label for="name">Name
+            <input type="text" formControlName="name">
+        </label>
+        <label for="login">Login
+            <input type="text" formControlName="login" >        
+        </label>
+        <label for="email">E-mail
+            <input type="text" formControlName="email" >
+        </label>
+        <label for="senha">Password
+            <input type="text" formControlName="senha" >
+        </label>
         <button (click)="submit()">Save</button>
     </form>
 </div>

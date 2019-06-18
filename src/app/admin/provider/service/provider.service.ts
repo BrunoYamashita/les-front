@@ -17,10 +17,33 @@ export class ProviderService {
         return this.http.get(this.providerRoute, {headers});
     }
 
+    public getProvidersById(id: any) {
+        let headers = new HttpHeaders({
+            'token_hash': this.authenticationService.token
+        });
+        
+        return this.http.get(`${this.providerRoute}/${id}`, {headers});
+    }
+
+    public updateProvider(id: any, body: any) {
+        let headers = new HttpHeaders({
+            'token_hash': this.authenticationService.token
+        });
+        
+        return this.http.put(`${this.providerRoute}/${id}`, body ,{headers});
+    }
+
     public createProvider(provider: any){
         let headers = new HttpHeaders({
             'token_hash': this.authenticationService.token,
         });
         return this.http.post(this.providerRoute, provider,{headers});
+    }
+
+    public deleteProvider(id:any){
+        let headers = new HttpHeaders({
+            'token_hash': this.authenticationService.token,
+        });
+        return this.http.delete(`${this.providerRoute}/${id}`, {headers});
     }
 }

@@ -1,9 +1,11 @@
 <div>
     <form [formGroup]="providerForm">
-        <label for="marca_nome">Name</label>
-        <input type="text" formControlName="marca_nome">
-        <label for="marca_status">Status</label>
-        <input type="text" pattern="[A-Z]*" formControlName="marca_status" maxlength="1">
+        <label for="marca_nome">Name
+            <input type="text" formControlName="marca_nome">
+        </label>
+        <label for="marca_status">Status
+            <input type="text" pattern="[A-Z]*" formControlName="marca_status" maxlength="1">
+        </label>
         <button (click)="submit()">Save</button>
     </form>
 </div>

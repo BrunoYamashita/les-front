@@ -23,4 +23,11 @@ export class UserService {
         });
         return this.http.post(this.userRoute, user,{headers});
     }
+
+    public deleteUser(id:any){
+        let headers = new HttpHeaders({
+            'token_hash': this.authenticationService.token,
+        });
+        return this.http.delete(`${this.userRoute}/${id}`, {headers});
+    }
 }

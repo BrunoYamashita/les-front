@@ -1,8 +1,11 @@
 <div>
-    <a [routerLink]="['form']">
-        New
-      </a>
-  <div *ngFor="let user of users">
-    <app-user [user]="user"></app-user>
+  <a [routerLink]="['form']" class="new">
+      New
+  </a>
+<section class="content-list">
+  <div class="row">
+    <div  *ngFor="let user of users" class="col-sm-6 col-xs-12">
+      <app-user [user]="user"></app-user>
+    </div>
   </div>
-</div>
+</section>

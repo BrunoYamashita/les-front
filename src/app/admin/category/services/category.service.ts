@@ -16,10 +16,31 @@ export class CategoryService {
         return this.http.get(this.categoryRoute, {headers});
     }
 
+    public getCategoryById(id: any) {
+        let headers = new HttpHeaders({
+            'token_hash': this.authenticationService.token
+        });
+        
+        return this.http.get(`${this.categoryRoute}/${id}`, {headers});
+    }
+    public updateCategory(id:any, body:any) {
+        let headers = new HttpHeaders({
+            'token_hash': this.authenticationService.token
+        });
+        
+        return this.http.post(`${this.categoryRoute}/${id}`, body,{headers});
+    }
     public createCategory(category: any){
         let headers = new HttpHeaders({
             'token_hash': this.authenticationService.token,
         });
         return this.http.post(this.categoryRoute, category,{headers});
+    }
+
+    public deleteCategory(id:any){
+        let headers = new HttpHeaders({
+            'token_hash': this.authenticationService.token,
+        });
+        return this.http.delete(`${this.categoryRoute}/${id}`, {headers});
     }
 }

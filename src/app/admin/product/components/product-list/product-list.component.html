@@ -1,8 +1,11 @@
-<div>
-    <a [routerLink]="['form']">
+<a [routerLink]="['form']" class="new">
         New
-      </a>
-  <div *ngFor="let product of products">
-    <app-product [product]="product"></app-product>
+</a>
+
+<section class="content-list">
+  <div class="row">
+    <div *ngFor="let product of products" class="col-sm-6 col-xs-12">
+      <app-product [product]="product"></app-product>
+    </div>
   </div>
-</div>
+</section>

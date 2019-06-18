@@ -1,9 +1,11 @@
 <div>
     <form [formGroup]="categoryForm">
-        <label for="categoria_nome">Name</label>
-        <input type="text" formControlName="categoria_nome">
-        <label for="categoria_status">Status</label>
-        <input type="text" pattern="[A-Z]*" formControlName="categoria_status" maxlength="1">
+        <label for="categoria_nome">Name
+            <input type="text" formControlName="categoria_nome">
+        </label>
+        <label for="categoria_status">Status
+            <input type="text" pattern="[A-Z]*" formControlName="categoria_status" maxlength="1">
+        </label>
         <button (click)="submit()">Save</button>
     </form>
 </div>
